@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clarinetfire</title>
+    
+    <!-- Meta SEO & Social -->
+    <meta name="description" content="clarinetfire — Liens officiels, musique Bandcamp et jeux itch.io.">
+    <meta property="og:title" content="clarinetfire">
+    <meta property="og:description" content="Musique, jeux vidéo et créations par clarinetfire.">
+    <meta property="og:image" content="clarinetfire.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon Pixel -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23000000'/><rect x='3' y='3' width='10' height='10' fill='%23ffffff'/><rect x='5' y='5' width='6' height='6' fill='%232ebd35'/></svg>">
+
+    <!-- Police Pixel Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================================================
+           PALETTE DE COULEURS STRICTE (3 COULEURS : NOIR, BLANC, VERT #2ebd35)
+           =================================================================== */
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-green: #2ebd35;
+            --font-pixel: 'Silkscreen', monospace;
+        }
+
+        /* Reset & Rendu Pixel Ultra-Nettement Défini (Crispy Rendering) */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-radius: 0px !important; /* Angles vifs 0px stricts */
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-pixel);
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: unset;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 36px 12px 48px 12px;
+        }
+
+        /* Conteneur principal centré */
+        .container {
+            width: 100%;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        /* 
+         * PROFIL : AVATAR & NOM
+         */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0px var(--accent-green);
+            background-color: #000000;
+            display: block;
+        }
+
+        .username {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-color);
+            margin-top: 4px;
+        }
+
+        /* 
+         * LIENS (BOUTONS PIXEL)
+         */
+        .links-stack {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pixel-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 48px;
+            width: 100%;
+            background-color: #000000;
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0px var(--accent-green);
+            padding: 10px 14px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: none;
+            cursor: pointer;
+        }
+
+        .pixel-btn:hover,
+        .pixel-btn:focus-visible {
+            background-color: var(--accent-green);
+            color: #000000;
+            border-color: var(--text-color);
+            box-shadow: 2px 2px 0px var(--text-color);
+            transform: translate(2px, 2px);
+            outline: none;
+        }
+
+        .pixel-btn:active {
+            box-shadow: 0px 0px 0px transparent;
+            transform: translate(4px, 4px);
+        }
+
+        .btn-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-arrow {
+            font-size: 14px;
+        }
+
+        /* 
+         * LECTEUR EMBEDDED BANDCAMP
+         */
+        .embed-box {
+            width: 100%;
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0px var(--accent-green);
+            background-color: #000000;
+            padding: 8px 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Responsive iframe Bandcamp */
+        .embed-box iframe {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Mobile ajustement */
+        @media (max-width: 360px) {
+            body { padding-top: 20px; }
+            .container { max-width: 100%; }
+            .pixel-btn { font-size: 12px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- PROFIL -->
+        <header class="profile">
+            <img 
+                src="clarinetfire.png" 
+                alt="clarinetfire" 
+                class="avatar"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\' width=\'96\' height=\'96\'><rect width=\'32\' height=\'32\' fill=\'%23000000\'/><rect x=\'2\' y=\'2\' width=\'28\' height=\'28\' fill=\'%23000000\' stroke=\'%23ffffff\' stroke-width=\'2\'/><rect x=\'14\' y=\'6\' width=\'4\' height=\'18\' fill=\'%232ebd35\'/><rect x=\'10\' y='18' width=\'12\' height=\'6\' fill=\'%23ffffff\'/></svg>';"
+            >
+            <h1 class="username">clarinetfire</h1>
+        </header>
+
+        <!-- LIENS -->
+        <nav class="links-stack" aria-label="Liens officiels">
+            
+            <a href="https://clarinetfire.bandcamp.com" target="_blank" rel="noopener noreferrer" class="pixel-btn">
+                <span class="btn-label">BANDCAMP</span>
+                <span class="btn-arrow">&gt;</span>
+            </a>
+
+            <a href="https://clarinetfire.itch.io/" target="_blank" rel="noopener noreferrer" class="pixel-btn">
+                <span class="btn-label">ITCH.IO</span>
+                <span class="btn-arrow">&gt;</span>
+            </a>
+
+            <a href="https://www.instagram.com/clarinetfire" target="_blank" rel="noopener noreferrer" class="pixel-btn">
+                <span class="btn-label">INSTAGRAM</span>
+                <span class="btn-arrow">&gt;</span>
+            </a>
+
+            <a href="https://x.com/clarinetfire_vg" target="_blank" rel="noopener noreferrer" class="pixel-btn">
+                <span class="btn-label">X / TWITTER</span>
+                <span class="btn-arrow">&gt;</span>
+            </a>
+
+            <!-- 
+               Pour ajouter un lien supplémentaire, copiez/collez :
+               <a href="URL" target="_blank" rel="noopener noreferrer" class="pixel-btn">
+                   <span class="btn-label">NOM DU SITE</span>
+                   <span class="btn-arrow">&gt;</span>
+               </a>
+            -->
+
+        </nav>
+
+        <!-- LECTEUR BANDCAMP (EMBED ORIGINAL) -->
+        <section class="embed-box" aria-label="Lecteur Bandcamp">
+            <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=2718827129/size=large/bgcol=333333/linkcol=2ebd35/tracklist=false/transparent=true/" seamless><a href="https://clarinetfire.bandcamp.com/track/2-1">∞2∞[1] by Clarinetfire</a></iframe>
+        </section>
+
+    </main>
+
+</body>
+</html>
